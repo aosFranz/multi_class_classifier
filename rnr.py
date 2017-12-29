@@ -41,7 +41,6 @@ batches_x = create_batches_of_size(tokenized,1000)
 batches_y = create_batches_of_size(labels,1000)
 tfidf_batches = [tokenizer.sequences_to_matrix(batch,mode='tfidf') for batch in batches_x]
 
-tfidfed = np.array([x for list in tfidf_batches for x in list])
 
 model = Sequential()
 model.add(Dense(512,input_dim=tfidf_batches[0].shape[1]))
