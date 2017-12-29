@@ -8,7 +8,7 @@ from keras.preprocessing.text import Tokenizer
 import numpy as np
 import math
 
-raw_data = pd.read_csv('/home/andreas/Data/Kaggle/Toxic_Comment/train.csv')[:1020]
+raw_data = pd.read_csv('Toxic_Comment/train.csv')
 
 list_classes = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]
 raw_labels = raw_data[list_classes].values
@@ -53,5 +53,5 @@ model.compile(optimizer='rmsprop',
               metrics=['accuracy'])
 
 
-model.fit(x=tfidfed,y=labels,batch_size=1000,epochs=10000)
+model.fit(x=tfidfed,y=labels,batch_size=1000,epochs=10)
 
